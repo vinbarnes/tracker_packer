@@ -1,7 +1,7 @@
 tracker_packer (`tp`)
 =====================
 
-`tp` is a dead-simple command-line utility for importing story templates into
+`tp` is a dead simple command-line utility for importing story templates into
 [Pivotal Tracker](http://pivotaltracker.com) to save precious time on
 your agile project. I mean, think of the velocity for heaven's sake!
 
@@ -16,14 +16,14 @@ are displayed as output.
 Sample yaml template file:
 
     ---
-    - :current_state: unstarted
-      :name: Provision server
-    - :current_state: unstarted
-      :name: Init git repo
-    - :current_state: unstarted
-      :name: Set gitosis permissions
-    - :current_state: unstarted
-      :name: Set vhost entry
+    -  unstarted
+       Provision server
+    -  unstarted
+       Init git repo
+    -  unstarted
+       Set gitosis permissions
+    -  unstarted
+       Set vhost entry
 
 Really the only thing you need to provide is a story name. You can
 further customize and tailor your stories (or chores) by setting the
@@ -48,6 +48,6 @@ Getting Started
 Additional Information
 ----------------------
 
-* Pivotal API v3 info: <https://www.pivotaltracker.com/help/api?version=v3>
+* Pivotal API v3 info: 
 
-* pivotal-tracker gem info: <http://rdoc.info/projects/jsmestad/pivotal-tracker>
+* pivotal-tracker gem info: 
