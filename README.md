@@ -39,16 +39,15 @@ Getting Started
 
 * Installing:
 
-    gem install tracker_packer
+    `gem install tracker_packer`
 
 * Retrieving API token:
 
-    curl -u $USERNAME:$PASSWORD -X GET https://www.pivotaltracker.com/services/v3/tokens/active
+    `curl -u $USERNAME:$PASSWORD -X GET https://www.pivotaltracker.com/services/v3/tokens/active`
 
 Additional Information
 ----------------------
 
-* Pivotal API v3 Docs: <https://www.pivotaltracker.com/help/api?version=v3>
+* Pivotal API v3 info: <https://www.pivotaltracker.com/help/api?version=v3>
 
-* Documentation: <http://rdoc.info/projects/jsmestad/pivotal-tracker>
-
+* pivotal-tracker gem info: <http://rdoc.info/projects/jsmestad/pivotal-tracker>
