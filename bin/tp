@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+
+require 'pivotal-tracker'
+require 'optparse'
+
+options = {}
+OptionParser.new do |opts|
+  opts.program_name = 'tp'
+  opts.banner = "Usage: tp [options]"
+  opts.on("--token TOKEN",
+          "Pivotal Tracker token") do |token|
+    options[:token] = token
+  end
+  opts.on("--project PROJECT_ID",
+          "Pivotal Tracker project id") do |project|
+    options[:project] = project
+  end
+  opts.on("--file TEMPLATE_FILE",
+          "YAML template file containing stories") do |file|
+    options[:file] = file
+  end
+end.parse(ARGV)
+
+PivotalTracker::Client.token = options[:token]
+
+templates = YAML::load(File.read(options[:file]))
+
+project = PivotalTracker::Project.find(options[:project])
+puts "Packing..."
+
+ids = templates.map {|story| project.stories.create(story).id }
+puts "Stories created: "
+puts ids
