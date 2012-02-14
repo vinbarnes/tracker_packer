@@ -7,7 +7,7 @@ your agile project. I mean, think of the velocity for heaven's sake!
 
 Usage:
 
-    tp --token=blah --project=123 --file=stories.yml
+    tp template_file.yml
 
 will create stories in the project with ID of 123 based on the yaml
 template file provided. Upon completion, the newly created story IDs
@@ -16,14 +16,19 @@ are displayed as output.
 Sample yaml template file:
 
     ---
-    -  unstarted
-       Provision server
-    -  unstarted
-       Init git repo
-    -  unstarted
-       Set gitosis permissions
-    -  unstarted
-       Set vhost entry
+    :token: <my_secret_api_token>
+    :project: 123
+    :stories:
+      -  :current_state: unstarted
+         :name: Provision server
+         :story_type: chore
+      -  :current_state: unstarted
+         :name: Set up git repo
+         :story_type: chore
+      -  :current_state: unstarted
+         :name: Set up DNS
+         :story_type: chore
+         :description: find out from client what they want to call their site
 
 Really the only thing you need to provide is a story name. You can
 further customize and tailor your stories (or chores) by setting the
@@ -48,6 +53,6 @@ Getting Started
 Additional Information
 ----------------------
 
-* Pivotal API v3 info: 
+* Pivotal API v3 info: <https://www.pivotaltracker.com/help/api?version=v3>
 
-* pivotal-tracker gem info: 
+* pivotal-tracker gem info: <http://rdoc.info/projects/jsmestad/pivotal-tracker>
